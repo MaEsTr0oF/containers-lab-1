@@ -94,18 +94,7 @@ round-trip min/avg/max = 0.059/0.139/0.290 ms
 #### 2.2 Добавление пользователя
 ![add-user](screenshots/2.png)
 #### 2.3 Список пользователей в БД
-```shell
-PS C:\Users\user\Desktop\orkerst\containers-lab-1> docker exec -it lab1-postgres psql -U postgres -d myapp -c "SELECT * FROM users;"
- id |       name       |         created_at
-----+------------------+----------------------------
-  1 | Docker Beginner  | 2026-03-12 13:29:06.631259
-  2 | Container Master | 2026-03-12 13:29:06.631259
-  3 | DevOps Student   | 2026-03-12 13:29:06.631259
-  4 | ХСП              | 2026-03-12 13:41:22.473989
-(4 rows)
-
-PS C:\Users\user\Desktop\orkerst\containers-lab-1>
-```
+![PostgreSQL](screenshots/5.png)
 
 ### 3. GitHub Actions
 #### 3.1 Успешный запуск workflow
