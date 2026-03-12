@@ -4,7 +4,6 @@ on:
     branches: [ main, master ]
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: maestr0of/containers-lab-1
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,7 +29,7 @@ jobs:
         with:
           context: ./app
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/app:latest
+          tags: ${{ env.REGISTRY }}/${{ toLower(github.repository) }}/app:latest
 
       - name: Build and push Nginx
         uses: docker/build-push-action@v5
@@ -38,11 +37,11 @@ jobs:
           context: ./nginx
           file: ./nginx/Dockerfile
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/nginx:latest
+          tags: ${{ env.REGISTRY }}/${{ toLower(github.repository) }}/nginx:latest
 
       - name: Test the built images
         env:
-          REPO_NAME: ${{ env.IMAGE_NAME }}
+          REPO_NAME: ${{ toLower(github.repository) }}
         run: |
           docker compose -f docker-compose.test.yml up -d
           sleep 30
