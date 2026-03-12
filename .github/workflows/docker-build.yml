@@ -4,7 +4,7 @@ on:
     branches: [ main, master ]
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ toLower(github.repository) }}
+  IMAGE_NAME: maestroof/containers-lab-1
 jobs:
   build:
     runs-on: ubuntu-latest
