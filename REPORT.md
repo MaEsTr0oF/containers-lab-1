@@ -109,10 +109,10 @@ PS C:\Users\user\Desktop\orkerst\containers-lab-1>
 
 ### 3. GitHub Actions
 #### 3.1 Успешный запуск workflow
-![github-actions](screenshots/github-actions.png)
+![github-actions](screenshots/3.png)
 
 #### 3.2 Опубликованные образы в GHCR
-![ghcr-packages](screenshots/ghcr-packages.png)
+![ghcr-packages](screenshots/4.png)
 
 ### 4. Выводы 
 Познакомился с основами Docker и написанием многостадийных Dockerfile. Успешно настроил CI/CD пайплайн в GitHub Actions для автоматической сборки и публикации образов в GHCR. Столкнулся с ошибками конфигурации в методических указаниях, которые успешно разрешил путем отладки сети и параметров healthcheck.
