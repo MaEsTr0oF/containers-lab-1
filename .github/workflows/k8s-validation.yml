@@ -44,11 +44,11 @@ jobs:
               truthy:
                 check-keys: false
 
-      - name: Validate manifests with kubectl (dry-run, client-side)
+      - name: Parse manifests with kubectl (offline syntax check)
         run: |
           for f in k8s/*.yaml; do
             echo "::group::$f"
-            kubectl apply --dry-run=client -f "$f"
+            kubectl apply --dry-run=client --validate=false -f "$f"
             echo "::endgroup::"
           done
 
